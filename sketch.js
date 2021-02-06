@@ -7,7 +7,7 @@ var ground, invisibleGround, groundImage;
 
 var cloudsGroup, cloudImage;
 var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obstacle6;
-
+var bg;
 var score=0;
 
 var gameOver, restart;
@@ -31,6 +31,7 @@ function preload(){
   
   gameOverImg = loadImage("gameOver.png");
   restartImg = loadImage("restart.png");
+  bg = loadImage("bg.jpg")
 }
 
 function setup() {
@@ -70,7 +71,9 @@ function setup() {
 
 function draw() {
   //trex.debug = true;
-  background(255);
+  background(bg);
+  fill("blue");
+  textSize(20)
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
